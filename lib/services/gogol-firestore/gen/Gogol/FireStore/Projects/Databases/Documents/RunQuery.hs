@@ -52,7 +52,7 @@ type FireStoreProjectsDatabasesDocumentsRunQueryResource =
     Core.:> Core.QueryParam "upload_protocol" Core.Text
     Core.:> Core.QueryParam "alt" Core.AltJSON
     Core.:> Core.ReqBody '[Core.JSON] RunQueryRequest
-    Core.:> Core.Post '[Core.JSON] RunQueryResponse
+    Core.:> Core.Post '[Core.JSON] [RunQueryResponse]
 
 -- | Runs a query.
 --
@@ -99,7 +99,7 @@ instance
   where
   type
     Rs FireStoreProjectsDatabasesDocumentsRunQuery =
-      RunQueryResponse
+      [RunQueryResponse]
   type
     Scopes FireStoreProjectsDatabasesDocumentsRunQuery =
       '[CloudPlatform'FullControl, Datastore'FullControl]
